@@ -1,0 +1,34 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "it is what the name suggest just a template repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack:server": "webpack server",
+    "webpack:deploy": "git subtree push --prefix dist origin gh-pages",
+    "webpack:build": "webpack",
+    "prettier:write": "npx prettier . --write",
+    "prettier:check": "npx prettier . --check",
+    "whatever": "git add --all && git commit -m 'minor_changes' && git push",
+    "lint": "eslint",
+    "lint:fix" : "eslint --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "css-loader": "^7.1.2",
+    "date-fns": "^4.1.0",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "3.3.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
