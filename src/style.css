@@ -142,7 +142,6 @@ body {
 .buttonHolder{
   height: 10%;
   width: 100%;
-  background-color: palevioletred;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -158,13 +157,23 @@ body {
 .cardHolder{
   height: 70%;
   width: 100%;
-  background-color: red;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+  align-items: center;
+  justify-items: center;
+
+  & > div{
+    width: 90%;
+    height: 80%;
+    background-color: red;
+    border-radius: 5%;
+  }
 }
 
 .linkHolder{
   height: 10%;
   width: 100%;
-  background-color: yellowgreen;
   display: flex;
   align-items: center;
   justify-content: flex-end;
