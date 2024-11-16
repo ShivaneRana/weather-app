@@ -166,7 +166,7 @@ body {
   & > div{
     width: 90%;
     height: 80%;
-    background-color: red;
+    outline: 2px solid;
     border-radius: 5%;
   }
 }
