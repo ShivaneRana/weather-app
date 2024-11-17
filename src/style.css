@@ -47,7 +47,7 @@ body {
   display: grid;
   grid-template-rows: repeat(15,1fr);
   grid-template-columns: repeat(15,1fr);
-  padding: 0.5%;
+  padding: 10px;
   background-color: lightslategray;
 }
 
@@ -60,8 +60,8 @@ body {
 .searchContainer{
   grid-row: 2/3;
   grid-column: 1/12;
-  margin-right: 1%;
   position: relative;
+  margin-right: 5px;
 
   & > input{
     width: 100%;
@@ -101,7 +101,6 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 3rem;
 }
 
 .description{
@@ -127,7 +126,6 @@ body {
   grid-column: 1/16;
   text-align: center;
   font-weight: lighter;
-  font-size: 2.5rem;
 }
 
 /* content for main is after this */
@@ -185,17 +183,55 @@ body {
   }
 }
 
+.temperature{
+  font-size: 4rem;
+}
+
+.searchName,.description,.currentDate,.currentDay,.searchButton,.unit,.buttonHolder > button{
+  font-size: 1rem;
+}
+
+.location{
+  font-size: 2.5rem;
+}
+
 @media only screen and (max-width:1200px) {
   .mainContainer{
     width: 1000px;
-    height: 500px;
+    height: 600px;
   }
+
+  .temperature{
+    font-size: 3rem;
+  }
+  
+  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
+    font-size: 1rem;
+  }
+  
+  .location{
+    font-size: 2rem;
+  }
+  
 }
 
 @media only screen and (max-width:1000px){
   .mainContainer{
     width: 800px;
-    height: 400px;
+    height: 500px;
+  }
+
+    
+  .temperature{
+    font-size: 2.5rem;
+  }
+
+  .description,.currentDate,.currentDay,.searchButton,.unit,.searchName,.buttonHolder > button{
+    font-size: 0.90rem;
+  }
+
+  .location{
+    font-size: 1.8rem;
   }
 }
 
@@ -204,20 +240,23 @@ body {
   .mainContainer{
     width: 600px;
     height: 400px;
+  }  
+
+  .temperature{
+    font-size: 2rem;
+  }
+
+  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
+    font-size: 0.70rem;
+  }
+
+  .location{
+    font-size: 1.5rem;
   }
 }
 
-@media only screen and (max-width:600px){
-  .mainContainer{
-    width: 100vw;
-    height: 80vh;
-  }
-}
-
-
 
 @media only screen and (max-width:600px){
-
   body{
     height: 200vh;
     width: 100vw;
@@ -240,6 +279,19 @@ body {
   .mainContainer > main{
     height: 100vh;
     width: 100vw;
+  }
+
+  
+  .temperature{
+    font-size: 4rem;
+  }
+
+  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
+    font-size: 1rem;
+  }
+
+  .location{
+    font-size: 3rem;
   }
 }
 
