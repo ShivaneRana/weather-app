@@ -68,6 +68,7 @@ body {
     height: 100%;
     padding: 5px;
     outline: 1px solid;
+    cursor: pointer;
 
     &:focus{
       border: none;
@@ -97,6 +98,7 @@ body {
   width: 100%;
   outline: 1px solid;
   border: none;
+  cursor: pointer;
 }
 
 .image{
@@ -166,6 +168,7 @@ body {
     padding: 10px;
     outline: 1px solid;
     border: none;
+    cursor: pointer;
   }
 }
 
