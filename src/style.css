@@ -12,7 +12,6 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  transition: all 0.75 ease;
   
 }
 
@@ -32,9 +31,10 @@ body {
 }
 
 .mainContainer{
-  width: 80%;
-  height: 90%;
+  width: 1200px;
+  height: 600px;
   display: flex;
+  transition: all 0.80s ease;
 }
 
 .mainContainer > aside,.mainContainer > main{
@@ -48,7 +48,7 @@ body {
   grid-template-rows: repeat(15,1fr);
   grid-template-columns: repeat(15,1fr);
   padding: 0.5%;
-  outline: 2px dashed;
+  background-color: lightslategray;
 }
 
 .buttonHolder{
@@ -60,7 +60,7 @@ body {
 .searchContainer{
   grid-row: 2/3;
   grid-column: 1/12;
-  margin-right: 5px;
+  margin-right: 1%;
   position: relative;
 
   & > input{
@@ -80,6 +80,7 @@ body {
 .unit{
   grid-row: 2/3;
   grid-column: 12/16;
+  width: 100%;
 }
 
 .image{
@@ -99,8 +100,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
   font-weight: bold;
+  font-size: 3rem;
 }
 
 .description{
@@ -125,19 +126,17 @@ body {
   grid-row: 14/16;
   grid-column: 1/16;
   text-align: center;
-  font-size: 2rem;
   font-weight: lighter;
+  font-size: 2.5rem;
 }
 
 /* content for main is after this */
 .mainContainer > main{
   width: 70%;
-  border-right: 2px dashed;
-  border-top: 2px dashed;
-  border-bottom: 2px dashed;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: lightblue;
 }
 
 .buttonHolder{
@@ -167,7 +166,7 @@ body {
     width: 90%;
     height: 80%;
     outline: 2px solid;
-    border-radius: 5%;
+    border-radius: 5px;
   }
 }
 
@@ -183,5 +182,97 @@ body {
   & > a> img{
     width: 30px;
     height: 30px;
+  }
+}
+
+@media only screen and (max-width:1200px) {
+  .mainContainer{
+    width: 1000px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width:1000px){
+  .mainContainer{
+    width: 800px;
+    height: 400px;
+  }
+}
+
+
+@media only screen and (max-width:800px){
+  .mainContainer{
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .mainContainer{
+    width: 100vw;
+    height: 80vh;
+  }
+}
+
+
+
+@media only screen and (max-width:600px){
+
+  body{
+    height: 200vh;
+    width: 100vw;
+  }
+
+  .mainContainer{
+    flex-direction: column;
+    width: 100vw;
+    height: 200vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainContainer > aside{
+    height: 100vh;
+    width: 100vw;
+    
+  }
+
+  .mainContainer > main{
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+
+@media only screen and (max-width:420px){
+
+  body{
+    height: 200vh;
+    width: 100vw;
+  }
+
+  .mainContainer{
+    flex-direction: column;
+    width: 100vw;
+    height: 200vh;
+  }
+
+  .mainContainer > aside{
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .mainContainer > main{
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .cardHolder{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    & > div{
+      width: 90%;
+    }
   }
 }
