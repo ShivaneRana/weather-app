@@ -69,10 +69,10 @@ body {
     padding: 5px;
     outline: 1px solid;
     cursor: pointer;
+    border: none;
 
     &:focus{
       border: none;
-      outline: none;
     }
   }
 
@@ -80,7 +80,7 @@ body {
     cursor: pointer;
     height: 90%;
     width: 15%;
-    right: 0;
+    right: 1%;
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
