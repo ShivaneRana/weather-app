@@ -25,8 +25,40 @@ export const apiData = (() => {
       .then((item) => {
         const firstDay = item.days[0];
         const secondDay = item.days[1];
-        console.log(firstDay);
-        console.log(secondDay);
+        const firstDayObject = returnWeatherData(
+          firstDay.temp,
+          item.description,
+          firstDay.datetime,
+          firstDay.datetimeEpoch,
+          item.address,
+          firstDay.tempmax,
+          firstDay.tempmin,
+          firstDay.windspeed,
+          firstDay.pressure,
+          firstDay.humidity,
+          firstDay.uvindex,
+          firstDay.sunrise,
+          firstDay.sunset,
+        );
+
+        const secondDayObject = returnWeatherData(
+          secondDay.temp,
+          item.description,
+          secondDay.datetime,
+          secondDay.datetimeEpoch,
+          item.address,
+          secondDay.tempmax,
+          secondDay.tempmin,
+          secondDay.windspeed,
+          secondDay.pressure,
+          secondDay.humidity,
+          secondDay.uvindex,
+          secondDay.sunrise,
+          secondDay.sunset,
+        );
+
+        console.log(firstDayObject);
+        console.log(secondDayObject);
       })
       .catch((item) => {
         console.log(`An error has occurresd ${item}`);
@@ -65,5 +97,5 @@ export const apiData = (() => {
     };
   }
 
-  return { fetchData, getData , returnWeatherData};
+  return { fetchData, getData, returnWeatherData };
 })();
