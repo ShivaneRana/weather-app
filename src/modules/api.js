@@ -10,33 +10,60 @@ export const apiData = (() => {
         },
       );
 
-      if(!response.ok){
+      if (!response.ok) {
         throw new Error(response.status);
       }
 
       return response.json();
     } catch (err) {
-        console.error("An error has occurred: "+err.message)
+      console.error("An error has occurred: " + err.message);
     }
   }
 
-  function getData(location){
-    fetchData(location).then(item => {
-
+  function getData(location) {
+    fetchData(location)
+      .then((item) => {
         const firstDay = item.days[0];
         const secondDay = item.days[1];
         console.log(firstDay);
         console.log(secondDay);
-    }).catch(item => {
+      })
+      .catch((item) => {
         console.log(`An error has occurresd ${item}`);
-    })
+      });
   }
 
-  function returnWeatherData(){
-    return{
-
-    }
+  function returnWeatherData(
+    temperature,
+    description,
+    dateTime,
+    time,
+    location,
+    tempmax,
+    tempmin,
+    wind,
+    pressure,
+    humidity,
+    uvindex,
+    sunrise,
+    sunset,
+  ) {
+    return {
+      temperature,
+      description,
+      dateTime,
+      time,
+      location,
+      tempmax,
+      tempmin,
+      wind,
+      pressure,
+      humidity,
+      uvindex,
+      sunrise,
+      sunset,
+    };
   }
 
-  return {fetchData,getData};
+  return { fetchData, getData , returnWeatherData};
 })();

@@ -14,16 +14,24 @@ let currentUnit = unit.value;
 
 document.addEventListener("DOMContentLoaded", () => {
   unit.selectedIndex = 0;
-  console.log(`Current Unit ${currentUnit}`);
+  setCurrentUnit(unit.value);
 });
 
 searchName.addEventListener("input", () => {});
 
 searchButton.addEventListener("click", () => {
-    apiData.getData(searchName.value);
+  apiData.getData(searchName.value);
 });
 
 unit.addEventListener("input", () => {
-  currentUnit = unit.value;
-  console.log(`Current Unit ${currentUnit}`);
+  setCurrentUnit(unit.value);
 });
+
+function setCurrentUnit(value) {
+  currentUnit = value;
+  getCurrentUnit();
+}
+
+function getCurrentUnit() {
+  console.log(`Current metric unit being used: ${currentUnit}`);
+}
