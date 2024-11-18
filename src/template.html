@@ -17,7 +17,7 @@
         <div class="searchButton">Search</div>
 
         <div class="image"></div>
-        <p class="temperature">30*C</p>
+        <p class="temperature"><span class="currentTemp">30</span><span class="metricUnit"></span></p>
         <p class="description">This is for demonstration purpose</p>
         <p class="currentDate">18th-sept-2004</p>
         <p class="currentDay">Friday, 10:15Am</p>
@@ -29,16 +29,32 @@
           <button>Tomorrow</button>
         </div>
         <div class="cardHolder">
-          <div>
+          <div class="card">
             <p>Temperature History</p>
-            <p><span class="tempmax"></span></p>
-            <p></span class="tempmin"></span></p>
+            <p><span class="tempmax"></span><span class="metricUnit"></span></p>
+            <p></span class="tempmin"></span><span class="metricUnit"></span></p>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="card">
+            <p>Wind</p>
+            <p class="wind"></p>
+          </div>
+          <div class="card">
+            <p>Pressure</p>
+            <p class="pressure"></p>
+          </div>
+          <div class="card">
+            <p>Humidity</p>
+            <p class="humidity"></p>
+          </div>
+          <div class="card">
+            <p>UV Index</p>
+            <p class="uvIndex"></p>
+          </div>
+          <div class="card">
+            <p>Sun</p>
+            <p>Rise</p><span class="sunRise"></span>
+            <p>Set</p><span class="sunSet"></span>
+          </div>
         </div>
         <div class="linkHolder">
           <a href="https://github.com/ShivaneRana" target="_blank"

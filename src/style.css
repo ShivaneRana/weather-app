@@ -66,6 +66,7 @@ body {
   border: none;
   grid-column: 1/13;
   grid-row: 2/3;
+  outline: none;
 
   &:focus {
     border: none;
@@ -179,9 +180,8 @@ body {
 
   & > div {
     width: 90%;
-    height: 80%;
-    outline: 2px solid;
-    border-radius: 5px;
+    height: 90%;
+    outline: 1px solid;
   }
 }
 
@@ -217,6 +217,8 @@ body {
 .location {
   font-size: 2.5rem;
 }
+
+
 
 @media only screen and (max-width: 1200px) {
   .mainContainer {
