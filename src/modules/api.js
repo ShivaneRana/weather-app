@@ -1,5 +1,7 @@
+import { render } from "./dom";
+
 export const apiData = (() => {
-  const apiKey = "SEFCKQ3SUJB25W2AD979DG4V7";
+  const apiKey = "X2CNSMUNBY8RYHUJ9NR6TQU6B";
 
   async function fetchData(location) {
     try {
@@ -39,6 +41,7 @@ export const apiData = (() => {
           firstDay.uvindex,
           firstDay.sunrise,
           firstDay.sunset,
+          firstDay.icon,
         );
 
         const secondDayObject = returnWeatherData(
@@ -55,10 +58,10 @@ export const apiData = (() => {
           secondDay.uvindex,
           secondDay.sunrise,
           secondDay.sunset,
+          secondDay.icon,
         );
 
-        console.log(firstDayObject);
-        console.log(secondDayObject);
+        render.displayDay(firstDayObject);
       })
       .catch((item) => {
         console.log(`An error has occurresd ${item}`);
@@ -79,6 +82,7 @@ export const apiData = (() => {
     uvindex,
     sunrise,
     sunset,
+    icon,
   ) {
     return {
       temperature,
