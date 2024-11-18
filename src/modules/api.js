@@ -98,6 +98,7 @@ export const apiData = (() => {
       uvindex,
       sunrise,
       sunset,
+      icon
     };
   }
 

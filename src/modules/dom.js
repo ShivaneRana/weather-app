@@ -13,6 +13,7 @@ const sunrise = document.querySelector(".sunRise");
 const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
 
+
 export const render = (function () {
   function displayDay(obj) {
     temperature.textContent = obj.temperature;
@@ -28,6 +29,7 @@ export const render = (function () {
     uvindex.textContent = obj.uvindex;
     sunrise.textContent = obj.sunrise;
     sunset.textContent = obj.sunset;
+    icon.textContent = obj.icon;
   }
 
   return { displayDay };
