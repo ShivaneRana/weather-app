@@ -12,7 +12,7 @@
     "prettier:check": "npx prettier . --check",
     "whatever": "git add --all && git commit -m 'minor_changes' && git push",
     "lint": "eslint",
-    "lint:fix" : "eslint --fix"
+    "lint:fix": "eslint --fix"
   },
   "keywords": [],
   "author": "",

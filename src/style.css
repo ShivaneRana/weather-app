@@ -12,7 +12,6 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  
 }
 
 * {
@@ -30,40 +29,41 @@ body {
   width: 100vw;
 }
 
-.mainContainer{
+.mainContainer {
   width: 1200px;
   height: 600px;
   display: flex;
-  transition: all 0.80s ease;
+  transition: all 0.8s ease;
 }
 
-.mainContainer > aside,.mainContainer > main{
+.mainContainer > aside,
+.mainContainer > main {
   height: 100%;
 }
 
 /* content for aside is after this */
-.mainContainer > aside{
+.mainContainer > aside {
   width: 30%;
   display: grid;
-  grid-template-rows: repeat(15,1fr);
-  grid-template-columns: repeat(15,1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-columns: repeat(15, 1fr);
   padding: 10px;
   background-color: lightslategray;
 }
 
-.buttonHolder{
+.buttonHolder {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.searchContainer{
+.searchContainer {
   grid-row: 2/3;
   grid-column: 1/13;
   position: relative;
   margin-right: 5px;
 
-  & > input{
+  & > input {
     width: 100%;
     height: 100%;
     padding: 5px;
@@ -71,12 +71,12 @@ body {
     cursor: pointer;
     border: none;
 
-    &:focus{
+    &:focus {
       border: none;
     }
   }
 
-  & > .searchButton{
+  & > .searchButton {
     cursor: pointer;
     height: 90%;
     width: 15%;
@@ -92,7 +92,7 @@ body {
   }
 }
 
-.unit{
+.unit {
   grid-row: 2/3;
   grid-column: 13/16;
   width: 100%;
@@ -101,7 +101,7 @@ body {
   cursor: pointer;
 }
 
-.image{
+.image {
   background-image: url("./asset/images/sunny.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -110,7 +110,7 @@ body {
   grid-column: 4/13;
 }
 
-.temperature{
+.temperature {
   grid-row: 8/9;
   grid-column: 4/13;
   width: 100%;
@@ -121,25 +121,25 @@ body {
   font-weight: bold;
 }
 
-.description{
+.description {
   grid-row: 9/10;
   grid-column: 1/16;
   text-align: center;
 }
 
-.currentDate{
+.currentDate {
   grid-row: 11/12;
   grid-column: 1/16;
   text-align: center;
 }
 
-.currentDay{
+.currentDay {
   grid-row: 12/13;
   grid-column: 1/16;
   text-align: center;
 }
 
-.location{
+.location {
   grid-row: 14/16;
   grid-column: 1/16;
   text-align: center;
@@ -147,7 +147,7 @@ body {
 }
 
 /* content for main is after this */
-.mainContainer > main{
+.mainContainer > main {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -155,7 +155,7 @@ body {
   background-color: lightblue;
 }
 
-.buttonHolder{
+.buttonHolder {
   height: 10%;
   width: 100%;
   display: flex;
@@ -164,7 +164,7 @@ body {
   padding-left: 30px;
   gap: 20px;
 
-  & > button{
+  & > button {
     padding: 10px;
     outline: 1px solid;
     border: none;
@@ -172,16 +172,16 @@ body {
   }
 }
 
-.cardHolder{
+.cardHolder {
   height: 70%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   justify-items: center;
 
-  & > div{
+  & > div {
     width: 90%;
     height: 80%;
     outline: 2px solid;
@@ -189,7 +189,7 @@ body {
   }
 }
 
-.linkHolder{
+.linkHolder {
   height: 10%;
   width: 100%;
   display: flex;
@@ -198,93 +198,112 @@ body {
   gap: 20px;
   padding-right: 30px;
 
-  & > a> img{
+  & > a > img {
     width: 30px;
     height: 30px;
   }
 }
 
-.temperature{
+.temperature {
   font-size: 4rem;
 }
 
-.searchName,.description,.currentDate,.currentDay,.searchButton,.unit,.buttonHolder > button{
+.searchName,
+.description,
+.currentDate,
+.currentDay,
+.searchButton,
+.unit,
+.buttonHolder > button {
   font-size: 1rem;
 }
 
-.location{
+.location {
   font-size: 2.5rem;
 }
 
-
-@media only screen and (max-width:1200px) {
-  .mainContainer{
+@media only screen and (max-width: 1200px) {
+  .mainContainer {
     width: 1000px;
     height: 600px;
   }
 
-  .temperature{
+  .temperature {
     font-size: 3rem;
   }
-  
-  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
+
+  .description,
+  .currentDate,
+  .searchName,
+  .currentDay,
+  .searchButton,
+  .unit,
+  .buttonHolder > button {
     font-size: 1rem;
   }
-  
-  .location{
+
+  .location {
     font-size: 2rem;
   }
-  
 }
 
-@media only screen and (max-width:1000px){
-  .mainContainer{
+@media only screen and (max-width: 1000px) {
+  .mainContainer {
     width: 800px;
     height: 500px;
   }
 
-    
-  .temperature{
+  .temperature {
     font-size: 2.5rem;
   }
 
-  .description,.currentDate,.currentDay,.searchButton,.unit,.searchName,.buttonHolder > button{
-    font-size: 0.90rem;
+  .description,
+  .currentDate,
+  .currentDay,
+  .searchButton,
+  .unit,
+  .searchName,
+  .buttonHolder > button {
+    font-size: 0.9rem;
   }
 
-  .location{
+  .location {
     font-size: 1.8rem;
   }
 }
 
-
-@media only screen and (max-width:800px){
-  .mainContainer{
+@media only screen and (max-width: 800px) {
+  .mainContainer {
     width: 600px;
     height: 400px;
-  }  
+  }
 
-  .temperature{
+  .temperature {
     font-size: 2rem;
   }
 
-  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
-    font-size: 0.70rem;
+  .description,
+  .currentDate,
+  .searchName,
+  .currentDay,
+  .searchButton,
+  .unit,
+  .buttonHolder > button {
+    font-size: 0.7rem;
   }
 
-  .location{
+  .location {
     font-size: 1.5rem;
   }
 }
 
-
-@media only screen and (max-width:600px){
-  body{
+@media only screen and (max-width: 600px) {
+  body {
     height: 200vh;
     width: 100vw;
   }
 
-  .mainContainer{
+  .mainContainer {
     flex-direction: column;
     width: 100vw;
     height: 200vh;
@@ -292,66 +311,67 @@ body {
     align-items: center;
   }
 
-  .mainContainer > aside{
-    height: 100vh;
-    width: 100vw;
-    
-  }
-
-  .mainContainer > main{
+  .mainContainer > aside {
     height: 100vh;
     width: 100vw;
   }
 
-  
-  .temperature{
+  .mainContainer > main {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .temperature {
     font-size: 4rem;
   }
 
-  .description,.currentDate,.searchName,.currentDay,.searchButton,.unit,.buttonHolder > button{
+  .description,
+  .currentDate,
+  .searchName,
+  .currentDay,
+  .searchButton,
+  .unit,
+  .buttonHolder > button {
     font-size: 1rem;
   }
 
-  .location{
+  .location {
     font-size: 3rem;
   }
 }
 
-
-@media only screen and (max-width:420px){
-
-  body{
+@media only screen and (max-width: 420px) {
+  body {
     height: 200vh;
     width: 100vw;
   }
 
-  .mainContainer{
+  .mainContainer {
     flex-direction: column;
     width: 100vw;
     height: 200vh;
   }
 
-  .mainContainer > aside{
+  .mainContainer > aside {
     height: 100vh;
     width: 100vw;
   }
 
-  .mainContainer > main{
+  .mainContainer > main {
     height: 100vh;
     width: 100vw;
   }
 
-  .cardHolder{
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(3,1fr);
+  .cardHolder {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
-    & > div{
+    & > div {
       width: 90%;
     }
   }
 }
 
-
-.hide{
+.hide {
   display: none;
 }
