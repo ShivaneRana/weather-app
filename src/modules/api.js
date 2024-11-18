@@ -22,8 +22,11 @@ export const apiData = (() => {
 
   function getData(location){
     fetchData(location).then(item => {
+
         const firstDay = item.days[0];
+        const secondDay = item.days[1];
         console.log(firstDay);
+        console.log(secondDay);
     }).catch(item => {
         console.log(`An error has occurresd ${item}`);
     })
