@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 searchName.addEventListener("input", () => {});
 
-document.addEventListener("keydown",(e) => {
-  if(e.key === "Enter"){
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
     searchButton.click();
   }
-})
+});
 
 searchButton.addEventListener("click", () => {
   apiData.getData(searchName.value);

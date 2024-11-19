@@ -167,8 +167,6 @@ body {
   }
 }
 
-
-
 .linkHolder {
   height: 10%;
   width: 100%;
@@ -198,10 +196,10 @@ body {
     height: 90%;
     outline: 1px solid;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
-    & > p:first-of-type{
+    & > p:first-of-type {
       background-color: red;
       grid-row: 1/2;
       grid-column: 1/4;
@@ -212,39 +210,35 @@ body {
   }
 }
 
-.temperatureContainer{
+.temperatureContainer {
   background-color: pink;
 
-  & .tempmax{
-    grid-row: ;
-    grid-column: ;
+  & .tempmax {
     background-color: rebeccapurple;
   }
 
-  & .tempmin{
-    grid-row: ;
-    grid-column: ;
+  & .tempmin {
     background-color: yellowgreen;
   }
 }
 
-.pressureContainer{
+.pressureContainer {
   background-color: blueviolet;
 }
 
-.humidityContainer{
+.humidityContainer {
   background-color: gold;
 }
 
-.windContainer{
+.windContainer {
   background-color: rebeccapurple;
 }
 
-.uvContainer{
+.uvContainer {
   background-color: yellow;
 }
 
-.sunContainer{
+.sunContainer {
   background-color: green;
 }
 

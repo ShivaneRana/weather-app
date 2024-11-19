@@ -13,11 +13,8 @@ const sunrise = document.querySelector(".sunRise");
 const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
 
-
 export const render = (function () {
   function displayDay(obj) {
-
-    
     temperature.textContent = obj.temperature;
     description.textContent = obj.description;
     currentDate.textContent = obj.dateTime;
@@ -25,20 +22,17 @@ export const render = (function () {
     location.textContent = obj.location;
     tempmax.textContent = obj.tempmax;
     tempmin.textContent = obj.tempmin;
-    wind.textContent = obj.wind+" km/h";
-    pressure.textContent = obj.pressure+" mb";
-    humidity.textContent = obj.humidity+" %";
+    wind.textContent = obj.wind + " km/h";
+    pressure.textContent = obj.pressure + " mb";
+    humidity.textContent = obj.humidity + " %";
     uvindex.textContent = obj.uvindex;
     sunrise.textContent = obj.sunrise;
     sunset.textContent = obj.sunset;
     console.log(obj.icon);
     icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;
   }
-  
 
   return { displayDay };
 })();
 
-export const renderDialog = (function(){
-
-})()
+export const renderDialog = (function () {})();
