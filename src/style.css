@@ -198,14 +198,33 @@ body {
     height: 90%;
     outline: 1px solid;
     display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    & > p:first-of-type{
+      background-color: red;
+      grid-row: 1/2;
+      grid-column: 1/4;
+      text-align: center;
+      align-content: center;
+      font-weight: lighter;
+    }
   }
 }
 
 .temperatureContainer{
   background-color: pink;
 
-  & > p:first-of-type{
-    background-color: red;
+  & .tempmax{
+    grid-row: ;
+    grid-column: ;
+    background-color: rebeccapurple;
+  }
+
+  & .tempmin{
+    grid-row: ;
+    grid-column: ;
+    background-color: yellowgreen;
   }
 }
 
