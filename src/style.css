@@ -275,7 +275,7 @@ body {
     grid-row: 3/4;
     grid-column: 2/4;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -283,7 +283,7 @@ body {
     grid-row: 2/3;
     grid-column: 2/4;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 }
@@ -349,6 +349,27 @@ body {
   .searchName,
   .buttonHolder > button {
     font-size: 0.9rem;
+  }
+
+  .commonContainer {
+    & > p:last-child {
+      font-size: 2rem;
+    }
+  }
+
+  .temperatureContainer {
+    & > p:nth-child(2),
+    p:last-child {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .sunContainer {
+    & span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
   }
 
   .location {

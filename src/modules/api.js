@@ -22,7 +22,7 @@ export const apiData = (() => {
     }
   }
 
-  function getData(location) {
+  function getData(location, day) {
     fetchData(location)
       .then((item) => {
         const firstDay = item.days[0];
@@ -61,7 +61,11 @@ export const apiData = (() => {
           secondDay.icon,
         );
 
-        render.displayDay(firstDayObject);
+        if (day === 0) {
+          render.displayDay(firstDayObject);
+        } else if (day === 1) {
+          render.displayDay(secondDayObject);
+        }
       })
       .catch((item) => {
         console.log(`An error has occurresd ${item}`);
