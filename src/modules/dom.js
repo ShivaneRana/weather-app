@@ -1,4 +1,4 @@
-import { clickToday, getCurrentUnit } from "..";
+import { changeMetricUnit, clickToday, getCurrentUnit } from "..";
 
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
@@ -39,7 +39,7 @@ export const render = (function () {
     const day = date.getDate();
     const year = date.getFullYear();
 
-    temperature.textContent = obj.temperature + getCurrentUnit();
+    temperature.textContent = obj.temperature;
     description.textContent = obj.description;
     currentDate.textContent = `${day}-${months[month - 1]}-${year}`; //year-month-date
 
@@ -67,8 +67,8 @@ export const render = (function () {
     currentDay.textContent = `${dayList[today]}, ${hour}:${minutes} ${AMPM}`;
 
     location.textContent = obj.location;
-    tempmax.textContent = obj.tempmax + getCurrentUnit();
-    tempmin.textContent = obj.tempmin + getCurrentUnit();
+    tempmax.textContent = obj.tempmax;
+    tempmin.textContent = obj.tempmin;
     wind.textContent = obj.wind + " km/h";
     pressure.textContent = obj.pressure + " mb";
     humidity.textContent = obj.humidity + " %";
@@ -83,6 +83,8 @@ export const render = (function () {
     let [hour2, minute2] = time2.split(":");
     sunrise.textContent = `${hour1.padStart(2, "0")}:${minute1} AM`;
     sunset.textContent = `${(hour2 - 12).toString().padStart(2, "0")}:${minute2} PM`;
+
+    changeMetricUnit();
 
     console.log(obj.icon);
     icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;

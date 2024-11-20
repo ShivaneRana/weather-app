@@ -8,6 +8,8 @@ const aside = document.querySelector("aside");
 const todayButton = document.querySelector(".todayButton");
 const tomorrowButton = document.querySelector(".tomorrowButton");
 const unit = document.querySelector(".unit");
+const allUnit = document.querySelectorAll(".metricUnit");
+const currentTemp = document.querySelector(".currentTemp");
 
 let currentUnit = unit.value;
 
@@ -43,6 +45,7 @@ searchButton.addEventListener("click", () => {
 
 unit.addEventListener("input", () => {
   setCurrentUnit(unit.value);
+  changeMetricUnit();
 });
 
 function setCurrentUnit(value) {
@@ -55,10 +58,13 @@ export function getCurrentUnit() {
   return currentUnit;
 }
 
-export function clickToday() {
-  todayButton.click();
-}
-
-export function clickTomorrow() {
-  tomorrowButton.click();
+export function changeMetricUnit() {
+  if (
+    !(currentTemp.textContent === undefined || currentTemp.textContent === "")
+  ) {
+    allUnit.forEach((item) => {
+      item.textContent = "";
+      item.textContent = unit.value;
+    });
+  }
 }
