@@ -81,8 +81,8 @@ export const render = (function () {
 
     let [hour1, minute1] = time1.split(":");
     let [hour2, minute2] = time2.split(":");
-    sunrise.textContent = `${hour1}:${minute1} AM`;
-    sunset.textContent = `${hour2 - 12}:${minute2} PM`;
+    sunrise.textContent = `${hour1.padStart(2, "0")}:${minute1} AM`;
+    sunset.textContent = `${(hour2 - 12).toString().padStart(2, "0")}:${minute2} PM`;
 
     console.log(obj.icon);
     icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;
