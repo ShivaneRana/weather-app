@@ -10,6 +10,9 @@ const tomorrowButton = document.querySelector(".tomorrowButton");
 const unit = document.querySelector(".unit");
 const allUnit = document.querySelectorAll(".metricUnit");
 const currentTemp = document.querySelector(".currentTemp");
+const temperature = document.querySelector(".currentTemp");
+const tempmin = document.querySelector(".tempmin");
+const tempmax = document.querySelector(".tempmax");
 
 document.addEventListener("DOMContentLoaded", () => {
   unit.selectedIndex = 0;
@@ -45,8 +48,7 @@ unit.addEventListener("input", () => {
 });
 
 export function getCurrentUnit() {
-  console.log(`Current metric unit being used: ${currentUnit}`);
-  return currentUnit;
+  return unit.value;
 }
 
 export function changeMetricUnit() {
@@ -61,9 +63,9 @@ export function changeMetricUnit() {
 }
 
 export function convertToCelcius(value) {
-  return ((value * 9) / 5 + 32).toFixed(3);
+  return (((value - 32) * 5) / 9).toFixed(1);
 }
 
 export function convertToFahrenheit(value) {
-  return (((value - 32) * 5) / 9).toFixed(3);
+  return ((value * 9) / 5 + 32).toFixed(1);
 }

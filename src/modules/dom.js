@@ -14,20 +14,6 @@ const uvindex = document.querySelector(".uvIndex");
 const sunrise = document.querySelector(".sunRise");
 const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
-const unit = document.querySelector(".unit");
-
-unit.addEventListener("input", () => {
-  if (
-    temperature.textContent !== "" &&
-    tempmax.textContent !== "" &&
-    tempmin.textContent
-  ) {
-    console.log("they are there");
-  }
-  {
-    console.log("They are not here");
-  }
-});
 
 export const render = (function () {
   const months = [
@@ -53,7 +39,6 @@ export const render = (function () {
     const day = date.getDate();
     const year = date.getFullYear();
 
-    temperature.textContent = obj.temperature;
     description.textContent = obj.description;
     currentDate.textContent = `${day}-${months[month - 1]}-${year}`; //year-month-date
 
@@ -81,8 +66,11 @@ export const render = (function () {
     currentDay.textContent = `${dayList[today]}, ${hour}:${minutes} ${AMPM}`;
 
     location.textContent = obj.location;
+
+    temperature.textContent = obj.temperature;
     tempmax.textContent = obj.tempmax;
     tempmin.textContent = obj.tempmin;
+
     wind.textContent = obj.wind + " km/h";
     pressure.textContent = obj.pressure + " mb";
     humidity.textContent = obj.humidity + " %";
