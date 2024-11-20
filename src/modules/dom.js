@@ -42,7 +42,30 @@ export const render = (function () {
     temperature.textContent = obj.temperature + getCurrentUnit();
     description.textContent = obj.description;
     currentDate.textContent = `${day}-${months[month - 1]}-${year}`; //year-month-date
-    currentDay.textContent = obj.time;
+
+    // assign value of current time
+    const currentDateTime = new Date(obj.time);
+    const hour = currentDateTime.getHours();
+    const minutes = currentDateTime.getMinutes();
+    const today = currentDateTime.getDay();
+
+    const dayList = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const AMPM = "AM";
+    if (hour >= 12) {
+      AMPM = "PM";
+    }
+
+    currentDay.textContent = `${dayList[today]}, ${hour}:${minutes} ${AMPM}`;
+
     location.textContent = obj.location;
     tempmax.textContent = obj.tempmax + getCurrentUnit();
     tempmin.textContent = obj.tempmin + getCurrentUnit();
