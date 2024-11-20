@@ -1,4 +1,4 @@
-import { render } from "./dom";
+import { render, renderDialog } from "./dom";
 
 export const apiData = (() => {
   const apiKey = "X2CNSMUNBY8RYHUJ9NR6TQU6B";
@@ -68,6 +68,7 @@ export const apiData = (() => {
         }
       })
       .catch((item) => {
+        renderDialog.renderError(`An error has occurresd ${item}`);
         console.log(`An error has occurresd ${item}`);
       });
   }

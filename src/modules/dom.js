@@ -1,3 +1,5 @@
+import { getCurrentUnit } from "..";
+
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
 const currentDay = document.querySelector(".currentDay");
@@ -14,14 +16,36 @@ const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
 
 export const render = (function () {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   function displayDay(obj) {
-    temperature.textContent = obj.temperature;
+    // creating date object for displaying current date
+
+    const date = new Date(`${obj.dateTime}`);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    temperature.textContent = obj.temperature + getCurrentUnit();
     description.textContent = obj.description;
-    currentDate.textContent = obj.dateTime;
+    currentDate.textContent = `${day}-${months[month - 1]}-${year}`; //year-month-date
     currentDay.textContent = obj.time;
     location.textContent = obj.location;
-    tempmax.textContent = obj.tempmax;
-    tempmin.textContent = obj.tempmin;
+    tempmax.textContent = obj.tempmax + getCurrentUnit();
+    tempmin.textContent = obj.tempmin + getCurrentUnit();
     wind.textContent = obj.wind + " km/h";
     pressure.textContent = obj.pressure + " mb";
     humidity.textContent = obj.humidity + " %";
@@ -35,4 +59,27 @@ export const render = (function () {
   return { displayDay };
 })();
 
-export const renderDialog = (function () {})();
+export const renderDialog = (function () {
+  function renderError(value) {
+    const dialog = document.createElement("dialog");
+    const wrapper = document.createElement("div");
+    const p = document.createElement("p");
+    p.textContent = value;
+
+    dialog.classList.add("dia");
+    wrapper.classList.add("wrapper");
+
+    wrapper.append(p);
+    dialog.append(wrapper);
+    document.body.append(dialog);
+    dialog.showModal();
+
+    dialog.addEventListener("click", (e) => {
+      if (!wrapper.contains(e.target)) {
+        dialog.close();
+      }
+    });
+  }
+
+  return { renderError };
+})();

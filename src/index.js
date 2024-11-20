@@ -1,6 +1,5 @@
 import "./style.css";
 import { apiData } from "./modules/api";
-import { render } from "./modules/dom";
 
 const searchName = document.querySelector(".searchName");
 const searchButton = document.querySelector(".searchButton");
@@ -46,6 +45,7 @@ function setCurrentUnit(value) {
   getCurrentUnit();
 }
 
-function getCurrentUnit() {
+export function getCurrentUnit() {
   console.log(`Current metric unit being used: ${currentUnit}`);
+  return currentUnit;
 }
