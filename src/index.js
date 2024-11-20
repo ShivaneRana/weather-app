@@ -14,6 +14,7 @@ let currentUnit = unit.value;
 document.addEventListener("DOMContentLoaded", () => {
   unit.selectedIndex = 0;
   setCurrentUnit(unit.value);
+  searchName.value = "";
 });
 
 document.addEventListener("keydown", (e) => {
@@ -24,16 +25,20 @@ document.addEventListener("keydown", (e) => {
 
 todayButton.addEventListener("click", () => {
   console.log("Today button was clicked");
+  todayButton.classList.add("buttonSelected");
+  tomorrowButton.classList.remove("buttonSelected");
   apiData.getData(searchName.value, 0);
 });
 
 tomorrowButton.addEventListener("click", () => {
   console.log("Tomorrow button was clicked");
+  todayButton.classList.remove("buttonSelected");
+  tomorrowButton.classList.add("buttonSelected");
   apiData.getData(searchName.value, 1);
 });
 
 searchButton.addEventListener("click", () => {
-  apiData.getData(searchName.value, 0);
+  todayButton.click();
 });
 
 unit.addEventListener("input", () => {
@@ -48,4 +53,12 @@ function setCurrentUnit(value) {
 export function getCurrentUnit() {
   console.log(`Current metric unit being used: ${currentUnit}`);
   return currentUnit;
+}
+
+export function clickToday() {
+  todayButton.click();
+}
+
+export function clickTomorrow() {
+  tomorrowButton.click();
 }

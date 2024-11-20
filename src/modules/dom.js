@@ -1,4 +1,4 @@
-import { getCurrentUnit } from "..";
+import { clickToday, getCurrentUnit } from "..";
 
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
