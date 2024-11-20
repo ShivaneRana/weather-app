@@ -43,6 +43,10 @@ body {
   height: 100%;
 }
 
+.mainContainer > main {
+  position: relative;
+}
+
 /* content for aside is after this */
 .mainContainer > aside {
   width: 30%;

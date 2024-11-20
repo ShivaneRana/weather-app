@@ -13,6 +13,7 @@ const tempmax = document.querySelector(".tempmax");
 const main = document.querySelector("main");
 const aside = document.querySelector("aside");
 const mainContainer = document.querySelector(".mainContainer");
+const logo = document.querySelector(".logo");
 
 document.addEventListener("DOMContentLoaded", () => {
   mainContainer.style.justifyContent = "center";
