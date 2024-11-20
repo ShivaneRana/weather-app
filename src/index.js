@@ -3,14 +3,11 @@ import { apiData } from "./modules/api";
 
 const searchName = document.querySelector(".searchName");
 const searchButton = document.querySelector(".searchButton");
-const main = document.querySelector("main");
-const aside = document.querySelector("aside");
 const todayButton = document.querySelector(".todayButton");
 const tomorrowButton = document.querySelector(".tomorrowButton");
 const unit = document.querySelector(".unit");
 const allUnit = document.querySelectorAll(".metricUnit");
 const currentTemp = document.querySelector(".currentTemp");
-const temperature = document.querySelector(".currentTemp");
 const tempmin = document.querySelector(".tempmin");
 const tempmax = document.querySelector(".tempmax");
 

@@ -1,4 +1,3 @@
-import { clickToday, clickTomorrow } from "..";
 import { render, renderDialog } from "./dom";
 
 export const apiData = (() => {

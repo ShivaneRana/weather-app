@@ -58,7 +58,7 @@ export const render = (function () {
       "Saturday",
     ];
 
-    const AMPM = "AM";
+    let AMPM = "AM";
     if (hour >= 12) {
       AMPM = "PM";
     }
