@@ -68,6 +68,7 @@ body {
   grid-column: 1/13;
   grid-row: 2/3;
   outline: none;
+  font-size: 1rem !important;
 
   &:focus {
     border: none;
@@ -86,6 +87,7 @@ body {
   cursor: pointer;
   grid-row: 2/3;
   grid-column: 13/16;
+  font-size: 1rem !important;
 }
 
 .unit {
@@ -353,6 +355,12 @@ body {
       font-size: 1.7rem;
     }
   }
+
+  .buttonHolder {
+    & > button {
+      padding: 8px;
+    }
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -398,6 +406,20 @@ body {
   .sunContainer {
     & span {
       font-size: 1.5rem;
+    }
+  }
+
+  .searchButton {
+    font-size: 0.8rem !important;
+  }
+
+  .searchName {
+    font-size: 0.8rem !important;
+  }
+
+  .buttonHolder {
+    & > button {
+      padding: 7px;
     }
   }
 }
@@ -452,6 +474,20 @@ body {
     width: 20px;
     height: 20px;
   }
+
+  .buttonHolder {
+    & > button {
+      padding: 6px;
+    }
+  }
+
+  .searchButton {
+    font-size: 0.6rem !important;
+  }
+
+  .searchName {
+    font-size: 0.6rem !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -500,6 +536,20 @@ body {
     width: 30px;
     height: 30px;
   }
+
+  .buttonHolder {
+    & > button {
+      padding: 10px;
+    }
+  }
+
+  .searchButton {
+    font-size: 1rem !important;
+  }
+
+  .searchName {
+    font-size: 1rem !important;
+  }
 }
 
 @media only screen and (max-width: 420px) {
@@ -534,10 +584,6 @@ body {
   }
 }
 
-.hide {
-  display: none;
-}
-
 .dia {
   position: absolute;
   margin: auto;
@@ -566,4 +612,8 @@ body {
 .buttonSelected {
   background-color: black;
   color: white;
+}
+
+.hide {
+  display: none;
 }

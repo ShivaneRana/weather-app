@@ -10,8 +10,14 @@ const allUnit = document.querySelectorAll(".metricUnit");
 const currentTemp = document.querySelector(".currentTemp");
 const tempmin = document.querySelector(".tempmin");
 const tempmax = document.querySelector(".tempmax");
+const main = document.querySelector("main");
+const aside = document.querySelector("aside");
+const mainContainer = document.querySelector(".mainContainer");
 
 document.addEventListener("DOMContentLoaded", () => {
+  mainContainer.style.justifyContent = "center";
+  main.style.opacity = 0;
+  main.style.pointerEvents = "none";
   unit.selectedIndex = 0;
   searchName.value = "";
 });
@@ -36,6 +42,15 @@ tomorrowButton.addEventListener("click", () => {
 
 searchButton.addEventListener("click", () => {
   todayButton.click();
+  main.style.opacity = 1;
+  main.style.pointerEvents = "auto";
+});
+
+searchName.addEventListener("input", () => {
+  if (searchName.value === "") {
+    main.style.opacity = 0;
+    main.style.pointerEvents = "none";
+  }
 });
 
 unit.addEventListener("input", () => {
@@ -43,18 +58,20 @@ unit.addEventListener("input", () => {
 
   const currentUnit = getCurrentUnit();
 
-  const currentTempValue = parseFloat(currentTemp.textContent);
-  const tempMinValue = parseFloat(tempmin.textContent);
-  const tempMaxValue = parseFloat(tempmax.textContent);
+  if (currentTemp.textContent !== "") {
+    const currentTempValue = parseFloat(currentTemp.textContent);
+    const tempMinValue = parseFloat(tempmin.textContent);
+    const tempMaxValue = parseFloat(tempmax.textContent);
 
-  if (currentUnit === "°C") {
-    currentTemp.textContent = convertToCelcius(currentTempValue);
-    tempmin.textContent = convertToCelcius(tempMinValue);
-    tempmax.textContent = convertToCelcius(tempMaxValue);
-  } else if (currentUnit === "°F") {
-    currentTemp.textContent = convertToFahrenheit(currentTempValue);
-    tempmin.textContent = convertToFahrenheit(tempMinValue);
-    tempmax.textContent = convertToFahrenheit(tempMaxValue);
+    if (currentUnit === "°C") {
+      currentTemp.textContent = convertToCelcius(currentTempValue);
+      tempmin.textContent = convertToCelcius(tempMinValue);
+      tempmax.textContent = convertToCelcius(tempMaxValue);
+    } else if (currentUnit === "°F") {
+      currentTemp.textContent = convertToFahrenheit(currentTempValue);
+      tempmin.textContent = convertToFahrenheit(tempMinValue);
+      tempmax.textContent = convertToFahrenheit(tempMaxValue);
+    }
   }
 });
 

@@ -1,4 +1,8 @@
 import { render, renderDialog } from "./dom";
+import "../style.css";
+const main = document.querySelector("main");
+const aside = document.querySelector("aside");
+const mainContainer = document.querySelector(".mainContainer");
 
 export const apiData = (() => {
   const apiKey = "X2CNSMUNBY8RYHUJ9NR6TQU6B";
@@ -60,6 +64,8 @@ export const apiData = (() => {
           secondDay.sunset,
           secondDay.icon,
         );
+
+        main.style.display = "flex";
 
         if (day === 0) {
           render.displayDay(firstDayObject);
