@@ -11,11 +11,8 @@ const unit = document.querySelector(".unit");
 const allUnit = document.querySelectorAll(".metricUnit");
 const currentTemp = document.querySelector(".currentTemp");
 
-let currentUnit = unit.value;
-
 document.addEventListener("DOMContentLoaded", () => {
   unit.selectedIndex = 0;
-  setCurrentUnit(unit.value);
   searchName.value = "";
 });
 
@@ -44,14 +41,8 @@ searchButton.addEventListener("click", () => {
 });
 
 unit.addEventListener("input", () => {
-  setCurrentUnit(unit.value);
   changeMetricUnit();
 });
-
-function setCurrentUnit(value) {
-  currentUnit = value;
-  getCurrentUnit();
-}
 
 export function getCurrentUnit() {
   console.log(`Current metric unit being used: ${currentUnit}`);
@@ -67,4 +58,12 @@ export function changeMetricUnit() {
       item.textContent = unit.value;
     });
   }
+}
+
+export function convertToCelcius(value) {
+  return ((value * 9) / 5 + 32).toFixed(3);
+}
+
+export function convertToFahrenheit(value) {
+  return (((value - 32) * 5) / 9).toFixed(3);
 }

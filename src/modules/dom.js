@@ -1,4 +1,4 @@
-import { changeMetricUnit, clickToday, getCurrentUnit } from "..";
+import { changeMetricUnit } from "..";
 
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
@@ -14,6 +14,20 @@ const uvindex = document.querySelector(".uvIndex");
 const sunrise = document.querySelector(".sunRise");
 const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
+const unit = document.querySelector(".unit");
+
+unit.addEventListener("input", () => {
+  if (
+    temperature.textContent !== "" &&
+    tempmax.textContent !== "" &&
+    tempmin.textContent
+  ) {
+    console.log("they are there");
+  }
+  {
+    console.log("They are not here");
+  }
+});
 
 export const render = (function () {
   const months = [
