@@ -1,4 +1,4 @@
-import { changeMetricUnit } from "..";
+import { changeMetricUnit, convertToCelcius, getCurrentUnit } from "..";
 
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
@@ -67,9 +67,18 @@ export const render = (function () {
 
     location.textContent = obj.location;
 
-    temperature.textContent = obj.temperature;
-    tempmax.textContent = obj.tempmax;
-    tempmin.textContent = obj.tempmin;
+    console.log(getCurrentUnit());
+    if (getCurrentUnit() === "°F") {
+      temperature.textContent = obj.temperature;
+      tempmax.textContent = obj.tempmax;
+      tempmin.textContent = obj.tempmin;
+    } else if (getCurrentUnit() === "°C") {
+      temperature.textContent = convertToCelcius(obj.temperature);
+      tempmax.textContent = convertToCelcius(obj.tempmax);
+      tempmin.textContent = convertToCelcius(obj.tempmin);
+    } else {
+      console.log(`unit current value is ${getCurrentUnit()}`);
+    }
 
     wind.textContent = obj.wind + " km/h";
     pressure.textContent = obj.pressure + " mb";

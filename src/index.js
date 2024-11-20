@@ -26,14 +26,12 @@ document.addEventListener("keydown", (e) => {
 });
 
 todayButton.addEventListener("click", () => {
-  console.log("Today button was clicked");
   todayButton.classList.add("buttonSelected");
   tomorrowButton.classList.remove("buttonSelected");
   apiData.getData(searchName.value, 0);
 });
 
 tomorrowButton.addEventListener("click", () => {
-  console.log("Tomorrow button was clicked");
   todayButton.classList.remove("buttonSelected");
   tomorrowButton.classList.add("buttonSelected");
   apiData.getData(searchName.value, 1);
@@ -63,9 +61,9 @@ export function changeMetricUnit() {
 }
 
 export function convertToCelcius(value) {
-  return (((value - 32) * 5) / 9).toFixed(1);
+  return Number((((value - 32) * 5) / 9).toFixed(1));
 }
 
 export function convertToFahrenheit(value) {
-  return ((value * 9) / 5 + 32).toFixed(1);
+  return Number(((value * 9) / 5 + 32).toFixed(1));
 }
