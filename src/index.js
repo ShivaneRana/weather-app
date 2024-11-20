@@ -43,6 +43,22 @@ searchButton.addEventListener("click", () => {
 
 unit.addEventListener("input", () => {
   changeMetricUnit();
+
+  const currentUnit = getCurrentUnit();
+
+  const currentTempValue = parseFloat(currentTemp.textContent);
+  const tempMinValue = parseFloat(tempmin.textContent);
+  const tempMaxValue = parseFloat(tempmax.textContent);
+
+  if (currentUnit === "°C") {
+    currentTemp.textContent = convertToCelcius(currentTempValue);
+    tempmin.textContent = convertToCelcius(tempMinValue);
+    tempmax.textContent = convertToCelcius(tempMaxValue);
+  } else if (currentUnit === "°F") {
+    currentTemp.textContent = convertToFahrenheit(currentTempValue);
+    tempmin.textContent = convertToFahrenheit(tempMinValue);
+    tempmax.textContent = convertToFahrenheit(tempMaxValue);
+  }
 });
 
 export function getCurrentUnit() {

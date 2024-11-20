@@ -67,7 +67,6 @@ export const render = (function () {
 
     location.textContent = obj.location;
 
-    console.log(getCurrentUnit());
     if (getCurrentUnit() === "°F") {
       temperature.textContent = obj.temperature;
       tempmax.textContent = obj.tempmax;
@@ -97,7 +96,6 @@ export const render = (function () {
 
     changeMetricUnit();
 
-    console.log(obj.icon);
     icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;
   }
 
