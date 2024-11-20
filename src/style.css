@@ -331,6 +331,28 @@ body {
   .location {
     font-size: 2rem;
   }
+
+  .temperatureContainer {
+    & > p:nth-child(2) {
+      font-size: 1.7rem;
+    }
+
+    & > p:last-child {
+      font-size: 1.7rem;
+    }
+  }
+
+  .commonContainer {
+    & > p:last-child {
+      font-size: 1.7rem;
+    }
+  }
+
+  .sunContainer {
+    & span {
+      font-size: 1.7rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -353,29 +375,30 @@ body {
     font-size: 0.9rem;
   }
 
-  .commonContainer {
-    & > p:last-child {
-      font-size: 2rem;
-    }
+  .location {
+    font-size: 1.8rem;
   }
 
   .temperatureContainer {
-    & > p:nth-child(2),
-    p:last-child {
-      font-size: 2rem;
-      font-weight: bold;
+    & > p:nth-child(2) {
+      font-size: 1.5rem;
+    }
+
+    & > p:last-child {
+      font-size: 1.5rem;
+    }
+  }
+
+  .commonContainer {
+    & > p:last-child {
+      font-size: 1.5rem;
     }
   }
 
   .sunContainer {
     & span {
-      font-size: 2rem;
-      font-weight: bold;
+      font-size: 1.5rem;
     }
-  }
-
-  .location {
-    font-size: 1.8rem;
   }
 }
 
@@ -401,6 +424,33 @@ body {
 
   .location {
     font-size: 1.5rem;
+  }
+
+  .temperatureContainer {
+    & > p:nth-child(2) {
+      font-size: 1.1rem;
+    }
+
+    & > p:last-child {
+      font-size: 1.1rem;
+    }
+  }
+
+  .commonContainer {
+    & > p:last-child {
+      font-size: 1.1rem;
+    }
+  }
+
+  .sunContainer {
+    & span {
+      font-size: 1.1rem;
+    }
+  }
+
+  .linkHolder a img {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -444,6 +494,11 @@ body {
 
   .location {
     font-size: 3rem;
+  }
+
+  .linkHolder a img {
+    width: 30px;
+    height: 30px;
   }
 }
 

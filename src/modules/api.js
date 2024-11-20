@@ -68,7 +68,7 @@ export const apiData = (() => {
         }
       })
       .catch((item) => {
-        renderDialog.renderError(`An error has occurresd ${item}`);
+        renderDialog.renderError(`Invalid response`);
         console.log(`An error has occurresd ${item}`);
       });
   }
