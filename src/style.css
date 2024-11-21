@@ -13,6 +13,9 @@
     "Helvetica Neue",
     sans-serif;
   transition: all 0.75s ease;
+  --primary-color: #000000;
+  --secondary-color: #443dff;
+  --tertiary-color: #ffffff;
 }
 
 * {
@@ -35,6 +38,7 @@ body {
   height: 600px;
   display: flex;
   transition: all 0.8s ease;
+  position: relative;
 }
 
 .mainContainer > aside,
@@ -49,7 +53,7 @@ body {
   grid-template-rows: repeat(15, 1fr);
   grid-template-columns: repeat(15, 1fr);
   padding: 10px;
-  background-color: lightslategray;
+  background-color: var(--secondary-color);
 }
 
 .buttonHolder {
@@ -67,19 +71,17 @@ body {
   grid-column: 1/13;
   grid-row: 2/3;
   outline: none;
+  border: 1px solid;
   font-size: 1rem !important;
-
-  &:focus {
-    border: none;
-  }
+  background-color: var(--secondary-color);
 }
 
 .searchButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
   font-weight: lighter;
   height: 100%;
   width: 100%;
@@ -87,6 +89,7 @@ body {
   grid-row: 2/3;
   grid-column: 13/16;
   font-size: 1rem !important;
+  font-weight: bold;
 }
 
 .unit {
@@ -98,6 +101,9 @@ body {
   border: none;
   cursor: pointer;
   text-align: center;
+  font-weight: bolder;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
 }
 
 .image {
@@ -150,7 +156,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: lightblue;
+  background-color: var(--secondary-color);
 }
 
 .buttonHolder {
@@ -167,6 +173,9 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    font-weight: bolder;
   }
 }
 
@@ -307,6 +316,20 @@ body {
 
 .location {
   font-size: 2.5rem;
+}
+
+.upperLayer {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -513,6 +536,19 @@ body {
     width: 100vw;
   }
 
+  .upperLayer {
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    & > img {
+      width: 80%;
+    }
+  }
+
   .temperature {
     font-size: 4rem;
   }
@@ -608,9 +644,9 @@ body {
   height: 100%;
 }
 
-.buttonSelected {
-  background-color: black;
-  color: white;
+.buttonHolder > .buttonSelected {
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
 }
 
 .hide {

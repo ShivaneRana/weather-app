@@ -1,5 +1,6 @@
 import "./style.css";
 import { apiData } from "./modules/api";
+import image from "./asset/images/logo.png";
 
 const searchName = document.querySelector(".searchName");
 const searchButton = document.querySelector(".searchButton");
@@ -11,9 +12,7 @@ const currentTemp = document.querySelector(".currentTemp");
 const tempmin = document.querySelector(".tempmin");
 const tempmax = document.querySelector(".tempmax");
 const main = document.querySelector("main");
-const aside = document.querySelector("aside");
 const mainContainer = document.querySelector(".mainContainer");
-const logo = document.querySelector(".logo");
 
 document.addEventListener("DOMContentLoaded", () => {
   mainContainer.style.justifyContent = "center";
@@ -43,8 +42,6 @@ tomorrowButton.addEventListener("click", () => {
 
 searchButton.addEventListener("click", () => {
   todayButton.click();
-  main.style.opacity = 1;
-  main.style.pointerEvents = "auto";
 });
 
 searchName.addEventListener("input", () => {

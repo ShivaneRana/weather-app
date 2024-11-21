@@ -14,6 +14,7 @@ const uvindex = document.querySelector(".uvIndex");
 const sunrise = document.querySelector(".sunRise");
 const sunset = document.querySelector(".sunSet");
 const icon = document.querySelector(".image");
+const main = document.querySelector("main");
 
 export const render = (function () {
   const months = [
@@ -94,6 +95,8 @@ export const render = (function () {
     sunrise.textContent = `${hour1.padStart(2, "0")}:${minute1} AM`;
     sunset.textContent = `${(hour2 - 12).toString().padStart(2, "0")}:${minute2} PM`;
 
+    main.style.opacity = 1;
+    main.style.pointerEvents = "auto";
     changeMetricUnit();
 
     icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;
