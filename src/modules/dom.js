@@ -99,7 +99,8 @@ export const render = (function () {
     main.style.pointerEvents = "auto";
     changeMetricUnit();
 
-    icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.png")`;
+    icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.svg")`;
+    console.log(obj.icon);
   }
 
   return { displayDay };
