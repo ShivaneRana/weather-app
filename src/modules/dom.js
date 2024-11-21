@@ -1,4 +1,5 @@
 import { changeMetricUnit, convertToCelcius, getCurrentUnit } from "..";
+import { icons } from "./icon.js";
 
 const location = document.querySelector(".location");
 const currentDate = document.querySelector(".currentDate");
@@ -99,7 +100,8 @@ export const render = (function () {
     main.style.pointerEvents = "auto";
     changeMetricUnit();
 
-    icon.style.backgroundImage = `url("/public/weatherIcon/${obj.icon}.svg")`;
+    icon.style.backgroundImage = `url(${icons[obj.icon]})`;
+    console.log(icons[obj.icon]);
     console.log(obj.icon);
   }
 
