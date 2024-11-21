@@ -130,5 +130,5 @@ export const renderDialog = (function () {
     });
   }
 
-  return { renderError };
+  return { renderError};
 })();

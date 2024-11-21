@@ -117,5 +117,5 @@ export const apiData = (() => {
     };
   }
 
-  return { fetchData, getData, returnWeatherData };
+  return { fetchData, getData, returnWeatherData};
 })();
