@@ -14,7 +14,9 @@ A responsive weather app that provides current weather conditions and forecasts 
 ## Screenshots
 
 ### Mobile Version
+
 ![Mobile Version](./src/asset/images/screenshot2.png)
 
 ### PC Version
+
 ![PC Version](./src/asset/images/screenshot1.png)
