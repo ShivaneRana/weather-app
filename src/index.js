@@ -1,6 +1,5 @@
 import "./style.css";
 import { apiData } from "./modules/api";
-import image from "./asset/images/logo.png";
 
 const searchName = document.querySelector(".searchName");
 const searchButton = document.querySelector(".searchButton");
@@ -29,14 +28,10 @@ document.addEventListener("keydown", (e) => {
 });
 
 todayButton.addEventListener("click", () => {
-  todayButton.classList.add("buttonSelected");
-  tomorrowButton.classList.remove("buttonSelected");
   apiData.getData(searchName.value, 0);
 });
 
 tomorrowButton.addEventListener("click", () => {
-  todayButton.classList.remove("buttonSelected");
-  tomorrowButton.classList.add("buttonSelected");
   apiData.getData(searchName.value, 1);
 });
 

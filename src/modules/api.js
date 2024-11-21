@@ -1,8 +1,8 @@
 import { render, renderDialog } from "./dom";
 import "../style.css";
 const main = document.querySelector("main");
-const aside = document.querySelector("aside");
-const mainContainer = document.querySelector(".mainContainer");
+const todayButton = document.querySelector(".todayButton");
+const tomorrowButton = document.querySelector(".tomorrowButton");
 
 export const apiData = (() => {
   const apiKey = "X2CNSMUNBY8RYHUJ9NR6TQU6B";
@@ -69,8 +69,12 @@ export const apiData = (() => {
 
         if (day === 0) {
           render.displayDay(firstDayObject);
+          todayButton.classList.add("buttonSelected");
+          tomorrowButton.classList.remove("buttonSelected");
         } else if (day === 1) {
           render.displayDay(secondDayObject);
+          todayButton.classList.remove("buttonSelected");
+          tomorrowButton.classList.add("buttonSelected");
         }
       })
       .catch((item) => {

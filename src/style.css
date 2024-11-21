@@ -16,6 +16,7 @@
   --primary-color: #000000;
   --secondary-color: #443dff;
   --tertiary-color: #ffffff;
+  --transition-speed: all 0.9s ease;
 }
 
 * {
@@ -157,6 +158,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: var(--secondary-color);
+  transition: var(--transition-speed);
 }
 
 .buttonHolder {
@@ -302,6 +304,7 @@ body {
 
 .temperature {
   font-size: 4rem;
+  transition: var(--transition-speed);
 }
 
 .searchName,
