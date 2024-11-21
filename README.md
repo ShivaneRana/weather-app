@@ -18,14 +18,3 @@ A responsive weather app that provides current weather conditions and forecasts 
 
 ### PC Version
 ![PC Version](./src/asset/images/screenshot1.png)
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- VisualCrossing API
-
-## How to Use
-
-1. Clone the repository:
